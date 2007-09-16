@@ -1,31 +1,30 @@
+%define Product PloneTestCase
+%define product plonetestcase
+%define name    zope-%{Product}
+%define version 0.9.6
+%define release %mkrel 1
+
 %define product		PloneTestCase
 %define realVersion     0.9.0
 %define release         1
 
-%define version %(echo %{realVersion} | sed -e 's/-/./g')
-
 %define zope_minver	2.7
 %define plone_minver	2.0
-
 %define zope_home	%{_prefix}/lib/zope
 %define software_home	%{zope_home}/lib/python
 
-Summary:	PloneTestCase sits on top of the ZopeTestCase package
-Name:		zope-%{product}
+Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}
+Summary:	PloneTestCase sits on top of the ZopeTestCase package
 License:	GPL
 Group:		System/Servers
-Source:		http://plone.org/products/plonetestcase/releases/%{version}/PloneTestCase-%{version}.tar.bz2
-URL:		http://plone.org/products/plonetestcase/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:	noarch
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	plone >= %{plone_minver}
-
-Provides:	plone-Faq == %{version}
-Obsoletes:	zope-Faq
-
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 PloneTestCase sits on top of the ZopeTestCase package. It has been developed to
@@ -48,7 +47,7 @@ default_user, and default_password.
 - The module utils from the ZopeTestCase package.
 
 %prep
-%setup -c
+%setup -c -q
 
 %build
 # Not much, eh? :-)
@@ -74,7 +73,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
