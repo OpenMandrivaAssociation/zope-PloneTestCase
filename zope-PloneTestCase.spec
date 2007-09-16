@@ -4,10 +4,6 @@
 %define version 0.9.6
 %define release %mkrel 1
 
-%define product		PloneTestCase
-%define realVersion     0.9.0
-%define release         1
-
 %define zope_minver	2.7
 %define plone_minver	2.0
 %define zope_home	%{_prefix}/lib/zope
@@ -56,7 +52,7 @@ default_user, and default_password.
 %install
 %{__rm} -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/%{software_home}/Products
-%{__cp} -a %{product} %{buildroot}%{software_home}/Products/%{product}
+%{__cp} -a %{Product} %{buildroot}%{software_home}/Products
 
 
 %clean
