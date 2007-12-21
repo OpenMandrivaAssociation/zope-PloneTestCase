@@ -20,6 +20,7 @@ Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-
 Requires:	zope >= %{zope_minver}
 Requires:	zope-Plone >= %{plone_minver}
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 PloneTestCase sits on top of the ZopeTestCase package. It has been developed to
