@@ -27,17 +27,17 @@ PloneTestCase sits on top of the ZopeTestCase package. It has been developed to
 simplify testing of Plone and Plone-based applications and products.
 The PloneTestCase package provides:
 - The function installProduct to install a Zope product into the test
-environment.
+  environment.
 - The function setupPloneSite to create a Plone portal in the test db.
   Note: setupPloneSite accepts an optional products argument, which allows you
-to specify a list of products that will be added to the portal using the
-quickinstaller tool.
+  to specify a list of products that will be added to the portal using the
+  quickinstaller tool.
 - The class PloneTestCase of which to derive your test cases.
-- The class FunctionalTestCase of which to derive your test cases for functional
-unit testing.
+- The class FunctionalTestCase of which to derive your test cases for
+  functional unit testing.
 - The classes Sandboxed and Functional to mix-in with your own test cases.
 - The constants portal_name, portal_owner, default_policy, default_products,
-default_user, and default_password.
+  default_user, and default_password.
 - The constant PLONE21 which evaluates to true for Plone versions >= 2.1.
 - The constant PLONE25 which evaluates to true for Plone versions >= 2.5.
 - The module utils from the ZopeTestCase package.
